@@ -1,26 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace katalog_samochodowy_cs
 {
     class Program
     {
-
-        
         static void Main(string[] args)
         {
-            Pojazd nowyPojazd = new Pojazd("Opel","Vectra",2000,1.9f,2331,'A');
-            Rejestr.lista.Add(nowyPojazd);
-            nowyPojazd = new Pojazd("Nissan", "Navara", 2003, 1.3f, 242342, 'M');
-            Rejestr.lista.Add(nowyPojazd);
-            Rejestr.ZapiszZawartoscKataloguDoPliku();
-            Rejestr.WczytajZawartoscKataloguZPliku();
-            Rejestr.lista[0].Wypisz();
-            Rejestr.lista[1].Wypisz();
-            Console.ReadLine();
+            bool on = true;
+            while (on)
+            {
+                Console.Clear();
+                Console.WriteLine("KATALOG SAMOCHODOWY\nWYBIERZ OPERACJĘ:");
+                Console.WriteLine("1. Wczytaj dane z pliku do rejestru");
+                Console.WriteLine("2. Zapisz rejestr do pliku");
+                Console.WriteLine("3. Dodaj nowy samochód do rejestru");
+                Console.WriteLine("4. Wypisz zawartość rejestru");
+                Console.WriteLine("ESC. Wyjście");
+                switch (Console.ReadKey(true).Key)
+                {
+                    case ConsoleKey.D1:
+                        Rejestr.WczytajZawartoscKataloguZPliku();
+                        break;
+                    case ConsoleKey.D2:
+                        Rejestr.ZapiszZawartoscKataloguDoPliku();
+                        break;
+                    case ConsoleKey.D3:
+                        Rejestr.DodajSamochodDoRejestru();
+                        break;
+                    case ConsoleKey.D4:
+                        Rejestr.WypiszRejestr();
+                        break;
+                    case ConsoleKey.Escape:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 
