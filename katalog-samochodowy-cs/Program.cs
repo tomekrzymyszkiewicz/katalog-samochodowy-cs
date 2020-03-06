@@ -15,6 +15,7 @@ namespace katalog_samochodowy_cs
                 Console.WriteLine("2. Zapisz rejestr do pliku");
                 Console.WriteLine("3. Dodaj nowy samochód do rejestru");
                 Console.WriteLine("4. Wypisz zawartość rejestru");
+                Console.WriteLine("5. Usuń samochód");
                 Console.WriteLine("ESC. Wyjście");
                 switch (Console.ReadKey(true).Key)
                 {
@@ -29,6 +30,10 @@ namespace katalog_samochodowy_cs
                         break;
                     case ConsoleKey.D4:
                         Rejestr.WypiszRejestr();
+                        Console.ReadLine();
+                        break;
+                    case ConsoleKey.D5:
+                        Rejestr.UsunSamochodZRejestru();
                         break;
                     case ConsoleKey.Escape:
                         Environment.Exit(0);

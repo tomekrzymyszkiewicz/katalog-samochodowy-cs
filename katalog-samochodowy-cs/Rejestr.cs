@@ -81,8 +81,24 @@ namespace katalog_samochodowy_cs
                 Console.Write("{0,-4}",i+1);
                 Rejestr.lista[i].Wypisz();
             }
+        }
+        public static void UsunSamochodZRejestru()
+        {
+            int doUsuniecia;
+            do
+            {
+                Rejestr.WypiszRejestr();
+                Console.WriteLine("Podaj numer samochodu do usunięcia: ");
+                doUsuniecia = Convert.ToInt32(Console.ReadLine());
+                Rejestr.lista.RemoveAt(doUsuniecia-1);
+                if(doUsuniecia > 0 && doUsuniecia < Rejestr.lista.Count())
+                {
+                    Console.WriteLine("Wybrano numer z poza zakresu\nNaciśnij klawisz, aby kontynuować");
+                    Console.ReadLine();
+                }
+            } while (doUsuniecia > 0 && doUsuniecia < Rejestr.lista.Count());
+            Console.WriteLine("Usunięto pojazd numer {0}\nNaciśnij klawisz, aby kontynuować", doUsuniecia);
             Console.ReadLine();
         }
-
     }
 }
