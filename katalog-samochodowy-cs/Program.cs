@@ -16,7 +16,8 @@ namespace katalog_samochodowy_cs
                 Console.WriteLine("3. Dodaj nowy samochód do rejestru");
                 Console.WriteLine("4. Wypisz zawartość rejestru");
                 Console.WriteLine("5. Usuń samochód");
-                Console.WriteLine("6. Sortuj");
+                Console.WriteLine("6. Sortuj rejestr");
+                Console.WriteLine("7. Wypisz rejestr według warunku");
                 Console.WriteLine("ESC. Wyjście");
                 switch (Console.ReadKey(true).Key)
                 {
@@ -38,6 +39,9 @@ namespace katalog_samochodowy_cs
                         break;
                     case ConsoleKey.D6:
                         Rejestr.SortowanieRejestru();
+                        break;
+                    case ConsoleKey.D7:
+                        Rejestr.WarunkoweWypisanieRejestru();
                         break;
                     case ConsoleKey.Escape:
                         Environment.Exit(0);
