@@ -414,7 +414,7 @@ namespace katalog_samochodowy_cs
 						case ConsoleKey.D1:
 							for (int i = 0; i < Rejestr.lista.Count(); i++)
 							{
-								if (Rejestr.lista[i].typSkrzyniBiegow.CompareTo(trescWarunku) == 0)
+								if (Rejestr.lista[i].typSkrzyniBiegow.CompareTo(Convert.ToChar(trescWarunku)) == 0)
 								{
 									Console.Write("{0,-4}", licznik + 1);
 									Rejestr.lista[i].Wypisz();
@@ -425,7 +425,7 @@ namespace katalog_samochodowy_cs
 						case ConsoleKey.D2:
 							for (int i = 0; i < Rejestr.lista.Count(); i++)
 							{
-								if (Rejestr.lista[i].typSkrzyniBiegow.CompareTo(trescWarunku) > 0)
+								if (Rejestr.lista[i].typSkrzyniBiegow.CompareTo(Convert.ToChar(trescWarunku)) > 0)
 								{
 									Console.Write("{0,-4}", licznik + 1);
 									Rejestr.lista[i].Wypisz();
@@ -436,7 +436,7 @@ namespace katalog_samochodowy_cs
 						case ConsoleKey.D3:
 							for (int i = 0; i < Rejestr.lista.Count(); i++)
 							{
-								if (Rejestr.lista[i].typSkrzyniBiegow.CompareTo(trescWarunku) < 0)
+								if (Rejestr.lista[i].typSkrzyniBiegow.CompareTo(Convert.ToChar(trescWarunku)) < 0)
 								{
 									Console.Write("{0,-4}", licznik + 1);
 									Rejestr.lista[i].Wypisz();
@@ -453,6 +453,7 @@ namespace katalog_samochodowy_cs
 					Console.WriteLine("error parametr");
 					break;
 			}
+			Console.WriteLine("Naciśnij klawisz, aby kontynuować");
 			Console.ReadLine();
 		}
 		public static void WypiszKonkretnySamochód()
