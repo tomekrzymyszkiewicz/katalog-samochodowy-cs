@@ -455,5 +455,21 @@ namespace katalog_samochodowy_cs
 			}
 			Console.ReadLine();
 		}
+		public static void WypiszKonkretnySamochód()
+		{
+			int numerPojazdu;
+			do
+			{
+				Console.Clear();
+				Console.WriteLine("Podaj numer pojazdu który chcesz wyświetlić: ");
+				numerPojazdu = Convert.ToInt32(Console.ReadLine());
+			} while (numerPojazdu < 0 && numerPojazdu > Rejestr.lista.Count());
+			Console.Clear();
+			Console.WriteLine("lp  Marka        Model        Rocznik Pojemnosc Przebieg  Skrzynia ");
+			Console.Write("{0,-4}", numerPojazdu);
+			Rejestr.lista[numerPojazdu - 1].Wypisz();
+			Console.WriteLine("Naciśnij klawisz, aby kontynuować");
+			Console.ReadLine();
+		}
 	}
 }
