@@ -28,6 +28,8 @@ namespace katalog_samochodowy_cs
 			przebieg = _przebieg;
 			typSkrzyniBiegow = _typSkrzyniBiegow;
 		}
+		~Pojazd() 
+		{ }
 		public void Wypisz()
 		{
 			System.Console.WriteLine(String.Format("{0,-12} {1,-12} {2,-7} {3,-9} {4,-9} {5,-7}", marka, model, rocznik, pojemnosc, przebieg, typSkrzyniBiegow));
